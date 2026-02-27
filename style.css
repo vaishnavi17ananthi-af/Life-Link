@@ -1,0 +1,40 @@
+/* Custom Fonts & Base Styles */
+* { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+/* Animations */
+.blood-drop { animation: pulse-blood 2s ease-in-out infinite; }
+@keyframes pulse-blood {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.heartbeat { animation: heartbeat 1.5s ease-in-out infinite; }
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.1); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.1); }
+    70% { transform: scale(1); }
+}
+
+.fade-in { animation: fadeIn 0.5s ease-out; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* UI Elements */
+.toggle-checkbox:checked { right: 0; border-color: #dc2626; }
+.toggle-checkbox:checked + .toggle-label { background-color: #dc2626; }
+
+.urgency-critical { border-left: 4px solid #dc2626; }
+.urgency-high { border-left: 4px solid #f97316; }
+.urgency-medium { border-left: 4px solid #eab308; }
+.urgency-low { border-left: 4px solid #22c55e; }
+
+.countdown-ring {
+    stroke-dasharray: 283;
+    stroke-dashoffset: 0;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}

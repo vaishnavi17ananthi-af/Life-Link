@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeLink - Real-time Blood Donor System</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="h-full bg-medical-50 text-medical-800 overflow-auto">
+    <div id="app" class="min-h-full w-full">
+        <nav id="main-nav" class="bg-white shadow-sm border-b border-medical-200 sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+                        <div class="blood-drop">
+                            <svg class="w-10 h-10 text-blood-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2c-5.33 8-8 12-8 15a8 8 0 1016 0c0-3-2.67-7-8-15z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h1 id="nav-title" class="text-xl font-bold text-blood-600">LifeLink</h1>
+                            <p id="nav-tagline" class="text-xs text-medical-500">Real-time Blood Donor System</p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-6">
+                        <button onclick="navigateTo('home')" class="nav-link text-medical-600 hover:text-blood-600 font-medium transition-colors">Home</button>
+                        <button onclick="navigateTo('register')" class="nav-link text-medical-600 hover:text-blood-600 font-medium transition-colors">Register</button>
+                        <button onclick="navigateTo('feed')" class="nav-link text-medical-600 hover:text-blood-600 font-medium transition-colors">Blood Requests</button>
+                        <button onclick="navigateTo('nurse')" class="nav-link text-medical-500 hover:text-blood-600 text-sm transition-colors">🏥 Nurse Portal</button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div id="notification-bell" class="relative cursor-pointer hidden" onclick="toggleNotifications()">
+                            <svg class="w-6 h-6 text-medical-500 hover:text-blood-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                            </svg>
+                            <span id="notification-count" class="notification-badge absolute -top-1 -right-1 bg-blood-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                        </div>
+                        <div id="user-menu" class="hidden">
+                            <button onclick="toggleUserDropdown()" class="flex items-center space-x-2 bg-blood-50 px-3 py-2 rounded-full hover:bg-blood-100 transition-colors">
+                                <div class="w-8 h-8 bg-blood-600 rounded-full flex items-center justify-center text-white font-bold text-sm" id="user-avatar">?</div>
+                                <span id="user-name-display" class="text-sm font-medium text-medical-700 hidden sm:block">User</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main id="main-content">
+            </main>
+    </div>
+
+    <script src="/_sdk/data_sdk.js"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
